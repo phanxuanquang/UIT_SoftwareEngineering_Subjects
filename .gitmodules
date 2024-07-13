@@ -1,3 +1,18 @@
 [submodule "EngAce"]
 	path = EngAce
 	url = https://github.com/phanxuanquang/EngAce
+[submodule "SE121 - Đồ án 1/COVIDealer"]
+	path = SE121 - Đồ án 1/COVIDealer
+	url = https://github.com/phanxuanquang/COVIDealer
+[submodule "SE122 - Đồ án 2/lapteller"]
+	path = SE122 - Đồ án 2/lapteller
+	url = https://github.com/tuan20520342/lapteller
+[submodule "SE310 - Công nghệ .NET/Đồ án môn học/InstaTalk"]
+	path = SE310 - Công nghệ .NET/Đồ án môn học/InstaTalk
+	url = https://github.com/phanxuanquang/InstaTalk
+[submodule "IT001 - Nhập môn lập trình/Thực hành/Introduction-To-Programming-UIT"]
+	path = IT001 - Nhập môn lập trình/Thực hành/Introduction-To-Programming-UIT
+	url = https://github.com/phanxuanquang/Introduction-To-Programming-UIT
+[submodule "IT002 - Lập trình hướng đối tượng/Thực hành/Object-Oriented-Programming-UIT"]
+	path = IT002 - Lập trình hướng đối tượng/Thực hành/Object-Oriented-Programming-UIT
+	url = https://github.com/phanxuanquang/Object-Oriented-Programming-UIT
