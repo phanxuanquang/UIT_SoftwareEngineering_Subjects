@@ -16,3 +16,9 @@
 [submodule "IT002 - Lập trình hướng đối tượng/Thực hành/Object-Oriented-Programming-UIT"]
 	path = IT002 - Lập trình hướng đối tượng/Thực hành/Object-Oriented-Programming-UIT
 	url = https://github.com/phanxuanquang/Object-Oriented-Programming-UIT
+[submodule "IT003 - Cấu trúc dữ liệu và giải thuật/Thực hành/Data-Structures-and-Algorithms-UIT"]
+	path = IT003 - Cấu trúc dữ liệu và giải thuật/Thực hành/Data-Structures-and-Algorithms-UIT
+	url = https://github.com/phanxuanquang/Data-Structures-and-Algorithms-UIT
+[submodule "IT008 - Lập trình trực quan/Thực hành/Visual-Programming-UIT"]
+	path = IT008 - Lập trình trực quan/Thực hành/Visual-Programming-UIT
+	url = https://github.com/phanxuanquang/Visual-Programming-UIT
