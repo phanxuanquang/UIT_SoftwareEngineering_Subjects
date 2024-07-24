@@ -1,12 +1,11 @@
 # © 2024 University of Information Technology (UIT-VNUHCM)
+
+:x: Bộ tài liệu chỉ mang tính chất tham khảo và không nên được dùng thay thế cho các bài nộp cho môn học :x:
+
 ![image](https://github.com/user-attachments/assets/afa26ba5-ae68-4265-8b05-34cb9f04e7b1)
 
-
-## Bộ tài liệu môn học tham khảo cho sinh viên ngành Kỹ thuật Phần mềm (2020 - 2024)
-<i>Lưu ý: Bộ tài liệu chỉ mang tính chất tham khảo và không nên được dùng thay thế cho các bài nộp cho môn học</i>
-
 ---------------------
-Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt chương trình đào tạo.
+## Bảng đánh giá mức độ ưu tiên cho các môn học trong chương trình đào tạo
 - Cực kỳ quan trọng, cần phải học thật kỹ và hiểu thật sâu: :star: :star: :star: :star: :star:
 - Ảnh hưởng đến hầu hết môn học/đồ án chuyên ngành: :star: :star: :star: :star:
 - Hiểu ở mức độ căn bản để giải quyết các bài thực hành, sẽ cần thiết khi đi làm: :star: :star: :star:
