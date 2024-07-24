@@ -1,8 +1,8 @@
-# © 2024 University of Information Technology (UIT-VNUHCM)
+# © 2024 University of Information Technology (VNUHCM-UIT)
 
-:no_entry: Bộ tài liệu chỉ mang tính chất tham khảo và không nên được dùng thay thế cho các bài nộp cho môn học :no_entry:
+:no_entry: **Bộ tài liệu chỉ mang tính chất tham khảo và không nên được dùng thay thế cho các bài nộp cho môn học** :no_entry:
 
-![image](https://github.com/user-attachments/assets/afa26ba5-ae68-4265-8b05-34cb9f04e7b1)
+![image](https://github.com/user-attachments/assets/d1087970-92bb-4078-ac1e-f55063ae9e52)
 
 ---------------------
 ## Bảng đánh giá mức độ ưu tiên cho các môn học trong chương trình đào tạo
