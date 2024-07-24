@@ -16,7 +16,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center;">Năm học</th>
+      <th style="text-align: center;">Năm</th>
       <th style="text-align: center;">Học kỳ</th>
       <th style="text-align: center;">Mã môn học</th>
       <th style="text-align: center;">Tên môn học</th>
@@ -25,7 +25,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
   </thead>
   <tbody>
     <tr>
-      <td>2020-2021</td>
+      <td>1</td>
       <td>1</td>
       <td>IT001</td>
       <td>Nhập môn lập trình</td>
@@ -60,7 +60,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
       <td>:star: :star:</td>
     </tr>
     <tr>
-      <td>2020-2021</td>
+      <td>1</td>
       <td>2</td>
       <td>IT002</td>
       <td>Lập trình hướng đối tượng</td>
@@ -102,7 +102,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
       <td>:star: :star: :star:</td>
     </tr>
     <tr>
-      <td>2021-2022</td>
+      <td>2</td>
       <td>1</td>
       <td>IT004</td>
       <td>Cơ sở dữ liệu</td>
@@ -137,7 +137,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
       <td>:star:</td>
     </tr>
     <tr>
-      <td>2021-2022</td>
+      <td>2</td>
       <td>2</td>
       <td>SE104</td>
       <td>Nhập môn Công nghệ phần mềm</td>
@@ -179,7 +179,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
       <td>:star:</td>
     </tr>
     <tr>
-      <td>2022-2023</td>
+      <td>3</td>
       <td>1</td>
       <td>SE100</td>
       <td>Phương pháp Phát triển phần mềm hướng đối tượng</td>
@@ -221,7 +221,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
       <td>:star:</td>
     </tr>
     <tr>
-      <td>2022-2023</td>
+      <td>3</td>
       <td>2</td>
       <td>IE106</td>
       <td>Thiết kế giao diện người dùng</td>
@@ -256,7 +256,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
       <td>:star: :star: :star: :star: :star:</td>
     </tr>
     <tr>
-      <td>2023-2024</td>
+      <td>4</td>
       <td>1</td>
       <td>SE122</td>
       <td>Đồ án 2</td>
@@ -291,7 +291,7 @@ Bảng đánh giá mức độ ưu tiên học cho các môn học trong suốt 
       <td>:star:</td>
     </tr>
     <tr>
-      <td>2023-2024</td>
+      <td>4</td>
       <td>2</td>
       <td>EC002</td>
       <td>Quản trị doanh nghiệp</td>
