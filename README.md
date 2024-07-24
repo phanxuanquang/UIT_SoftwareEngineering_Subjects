@@ -1,11 +1,17 @@
 # © 2024 University of Information Technology (UIT-VNUHCM)
 
-:x: Bộ tài liệu chỉ mang tính chất tham khảo và không nên được dùng thay thế cho các bài nộp cho môn học :x:
+:no_entry: Bộ tài liệu chỉ mang tính chất tham khảo và không nên được dùng thay thế cho các bài nộp cho môn học :no_entry:
 
 ![image](https://github.com/user-attachments/assets/afa26ba5-ae68-4265-8b05-34cb9f04e7b1)
 
 ---------------------
 ## Bảng đánh giá mức độ ưu tiên cho các môn học trong chương trình đào tạo
+
+### :triangular_flag_on_post: Lưu ý:
+- Đây là bảng đánh giá dựa trên cảm quan cá nhân của tác giả và chỉ mang *giá trị tham khảo*
+- Đánh giá thực tế cần dựa vào **năng lực** và **nguyện vọng** của sinh viên
+
+### :eight_pointed_black_star: Chú thích:
 - Cực kỳ quan trọng, cần phải học thật kỹ và hiểu thật sâu: :star: :star: :star: :star: :star:
 - Ảnh hưởng đến hầu hết môn học/đồ án chuyên ngành: :star: :star: :star: :star:
 - Hiểu ở mức độ căn bản để giải quyết các bài thực hành, sẽ cần thiết khi đi làm: :star: :star: :star:
