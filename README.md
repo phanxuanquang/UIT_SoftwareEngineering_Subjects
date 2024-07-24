@@ -1,4 +1,4 @@
-# © 2024 University of Information Technology (VNUHCM-UIT)
+# © University of Information Technology (VNUHCM-UIT)
 
 :no_entry: **Bộ tài liệu chỉ mang tính chất tham khảo và không nên được dùng thay thế cho các bài nộp cho môn học** :no_entry:
 
