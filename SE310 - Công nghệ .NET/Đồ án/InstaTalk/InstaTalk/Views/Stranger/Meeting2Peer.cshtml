@@ -1,0 +1,161 @@
+﻿@using System.Drawing;
+@{
+    ViewData["Title"] = "Stranger";
+}
+
+@section customHead {
+    <link rel="stylesheet" href="~/css/room_meeting.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+}
+<div class="d-flex align-items-center justify-content-center gap-1 h-100">
+    <div id="div_left_meeting" class="col-11 rounded-3 border border-2">
+        <div id="div_left_video_meeting" class="row row-cols-2 justify-content-center" style="margin:0;padding:0;height:93%;">
+            @for (int i = 0; i < 2; i++)
+            {
+                Random rnd = new Random();
+
+                Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+                <div class="user-card d-flex align-items-center justify-content-center">
+                    <div id="div_background_user_card" class="d-flex flex-column align-items-center justify-content-center" style="background-color:black;border-radius:0.5rem;">
+                        <div style="width:75px;height:75px;background-color:rgb(@randomColor.R, @randomColor.G, @randomColor.B);color:white;" class="rounded-circle d-flex align-items-center justify-content-center">
+                            OK
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div id="div_share_screen" style="display:none;">
+        </div>
+        <div id="div_footer_left_meeting" class="text-light d-flex align-items-center justify-content-center" style="height:auto;">
+            <div id="div_title_meeting">
+                <span id="time_meeting" class="me-2">
+                    00:00:00
+                </span>
+                |
+                <span id="id_room_meeting" class="ms-2" data-toggle="tooltip" data-placement="top" title="Click to copy room URL" style="cursor: pointer;">
+                    12345
+                </span>
+            </div>
+            <div id="div_control_meeting" class="d-flex py-2 align-items-center justify-content-center" style="width:80%;position:relative;">
+                <button data-toggle="tooltip" data-placement="top" title="Micro" id="btn_mic_meeting" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid; transition: .3s;" onclick="changeMicState()">
+                    <span class="material-icons" id="icon_mic_meeting">
+                        mic
+                    </span>
+                </button>
+                <button data-toggle="tooltip" data-placement="top" title="Camera" id="btn_cam_meeting" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid; transition: .3s;" onclick="changeCamState()">
+                    <span class="material-icons" id="icon_cam_meeting">
+                        videocam
+                    </span>
+                </button>
+                <button data-toggle="tooltip" data-placement="top" title="Chat Area" id="btn-icon-visibility" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid ; transition: .3s;" onclick="openChat()">
+                    <span class="material-icons" id="icon_chat_meeting">
+                        forum
+                    </span>
+                </button>
+
+                <button data-toggle="tooltip" data-placement="top" title="Show more" id="btn-icon-expand" class="col-1 rounded-circle flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid ; transition: .3s;" onclick="expand()">
+                    <span class="material-icons" id="icon_chat_meeting">
+                        expand_less
+                    </span>
+                </button>
+
+                <div id="side_bar_control" style="display:none;" class="align-items-center justify-content-center">
+                    <button data-toggle="tooltip" data-placement="top" title="Member List" id="btn-icon-visibility" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid ; transition: .3s;" onclick="openChat()">
+                        <span class="material-icons" id="icon_chat_meeting">
+                            people_alt
+                        </span>
+                    </button>
+                    <button data-toggle="tooltip" data-placement="top" title="Security Configuration" id="btn_cam_meeting" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid; transition: .3s;" data-bs-toggle="modal" data-bs-target="#ModalSecurityConfig">
+                        <span class="material-icons btn-ove" id="icon_cam_meeting">
+                            settings
+                        </span>
+                    </button>
+                    <button data-toggle="tooltip" data-placement="top" title="Leave The Room" class="Btn mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                        <div class="text">LEAVE</div>
+                    </button>
+                    <button data-toggle="tooltip" data-placement="top" title="Hide" id="btn-icon-hide" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid ; transition: .3s;" onclick="minimize()">
+                        <span class="material-icons" id="icon_chat_meeting">
+                            expand_more
+                        </span>
+                    </button>
+                </div>
+
+                <div id="side_bar_control_normal" class="align-items-center justify-content-center">
+                    <button data-toggle="tooltip" data-placement="top" title="Member List" id="btn-icon-visibility" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid ; transition: .3s;" onclick="openChat()">
+                        <span class="material-icons" id="icon_chat_meeting">
+                            people_alt
+                        </span>
+                    </button>
+                    <button data-toggle="tooltip" data-placement="top" title="Security Configuration" id="btn_cam_meeting" class="col-1 rounded-circle d-flex flex-column align-items-center justify-content-center mx-2 btn-light btn-floating" type="button" style="width:45px;height:45px;border-style:solid; transition: .3s;" data-bs-toggle="modal" data-bs-target="#ModalSecurityConfig">
+                        <span class="material-icons btn-ove" id="icon_cam_meeting">
+                            settings
+                        </span>
+                    </button>
+                    <button data-toggle="tooltip" data-placement="top" title="Leave The Room" class="Btn mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                        <div class="text">LEAVE</div>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="div_right_meeting" style="min-width:250px;" class="col-3 flex-column align-items-center border border-2 rounded-3 bg-light">
+        <div id="div_header_right_meeting" class="w-100 d-flex p-2">
+            <div class="checkbox-wrapper-35 col-11 bg-light py-2">
+                <input value="private" name="switch" id="switch" type="checkbox" class="switch" onclick="toggleComponents()">
+                <label for="switch">
+                    <span class="switch-x-text">Chat Area is </span>
+                    <span class="switch-x-toggletext">
+                        <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                        <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                    </span>
+                </label>
+            </div>
+            <button id="btn_icon_send" class="bg-transparent py-2 d-flex justify-content-center p-1 btn-ove" type="button" onclick="closeChat()">
+                <span class="material-icons" id="icon_clear_id">
+                    close
+                </span>
+            </button>
+        </div>
+        <div id="div_chat_right_meeting" class="w-100 h-100">
+        </div>
+        <div id="div_footer_right_meeting" class="w-100 d-flex p-3">
+            <button data-toggle="tooltip" data-placement="top" title="Attach a file" id="btn_attach_file" class="bg-transparent py-2 d-flex justify-content-center btn-ove" type="button" onclick="openFileSelector()">
+                <span class="material-icons" id="icon_clear_id">
+                    attach_file
+                </span>
+            </button>
+            <input type="file" id="file-input" style="display: none;">
+            <div class="form-outline d-flex">
+                <input type="text" id="input_chat_meeting" class="form-control border-0" />
+                <label id="lb_input_chat_meeting" class="form-label" for="input_chat_meeting" style="color:darkgray">Your message</label>
+            </div>
+            <button id="btn_icon_send" class="bg-transparent py-2 d-flex justify-content-center btn-ove" style="" type="button">
+                <span class="material-icons" id="icon_clear_id">
+                    send
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <label class="h5">Are you sure to leave this room?</label>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Keep me in</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Home")'">Just leave</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <script src="~/js/meeting.js" asp-append-version="true"></script>
+}

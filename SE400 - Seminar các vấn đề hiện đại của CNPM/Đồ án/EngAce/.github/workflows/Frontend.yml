@@ -1,0 +1,47 @@
+name: Frontend
+
+on:
+  push:
+    paths:
+      - 'engace.web/**'
+
+env:
+  AZURE_WEBAPP_NAME: engace-app   
+  AZURE_WEBAPP_PACKAGE_PATH: 'engace.web'
+  NODE_VERSION: '20.x'               
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Main Branch
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-${{ env.NODE_VERSION }}-
+            ${{ runner.os }}-node-
+      
+      - name: Install and Build
+        run: |
+          echo "Installing npm dependencies and building the project..."
+          npm ci
+          npm run build 
+        working-directory: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+
+      - name: Deploy
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_CREDENTIALS }}
+          package:  ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/build

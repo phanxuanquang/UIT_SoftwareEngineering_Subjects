@@ -1,0 +1,6 @@
+@EngAce.Api_HostAddress = http://localhost:5000
+
+GET {{EngAce.Api_HostAddress}}/quizz/
+Accept: application/json
+
+###

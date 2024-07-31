@@ -1,0 +1,146 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    ndkVersion '21.0.6113669'
+    lintOptions { disable 'RestrictedApi' }
+    compileSdkVersion 30
+    buildToolsVersion '30.0.3'
+    defaultConfig {
+        //applicationId "io.github.uditkarode.able"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "InterdimensionalBoop"
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+        buildFeatures {
+            viewBinding = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("release.keystore")
+            storePassword System.getenv('STORE_PASS')
+            keyAlias System.getenv('KEY_ALIAS')
+            keyPassword System.getenv('KEY_PASS')
+        }
+    }
+
+    buildTypes {
+        release {
+            postprocessing {
+                removeUnusedCode true
+                obfuscate false
+                optimizeCode true
+                proguardFile 'proguard-rules.pro'
+            }
+            signingConfig signingConfigs.release
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+
+    packagingOptions {
+        exclude 'lib/x86_64/**'
+        exclude 'lib/armeabi-v7a/**'
+        exclude 'lib/x86/**'
+    }
+}
+
+dependencies {
+    /*implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:input:3.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.github.TeamNewPipe.NewPipeExtractor:NewPipeExtractor:0.22.1'
+    //noinspection GradleDependency
+    implementation 'io.github.dreierf:material-intro-screen:0.0.6'
+    implementation 'com.airbnb.android:lottie:5.0.2'
+    implementation 'co.revely:gradient:1.0.1'
+    implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.flurry.android:analytics:13.0.0@aar'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.takisoft.preferencex:preferencex:1.1.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.tonyodev.fetch2:xfetch2:3.1.6'
+    implementation 'androidx.work:work-runtime:2.5.0'
+    implementation 'androidx.palette:palette:1.0.0'
+    implementation 'com.github.maxbruecken:jaudiotagger-android:995dd88554'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1-native-mt"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.3.1'
+    implementation 'androidx.fragment:fragment-ktx:1.3.0'
+
+    compileOnly(name:'mobile-ffmpeg', ext:'aar')*/
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.core:core-ktx:1.6.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    implementation 'com.afollestad.material-dialogs:input:3.3.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.github.TeamNewPipe.NewPipeExtractor:NewPipeExtractor:0.22.1'
+    //noinspection GradleDependency
+    implementation 'io.github.dreierf:material-intro-screen:0.0.6'
+    implementation 'com.airbnb.android:lottie:5.0.2'
+    implementation 'co.revely:gradient:1.0.1'
+    implementation 'com.google.code.gson:gson:2.8.7'
+    implementation 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'com.flurry.android:analytics:13.0.0@aar'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'androidx.preference:preference:1.1.1'
+    implementation 'com.takisoft.preferencex:preferencex:1.1.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
+    implementation 'androidx.tonyodev.fetch2:xfetch2:3.1.6'
+    implementation 'androidx.work:work-runtime:2.5.0'
+    implementation 'androidx.palette:palette:1.0.0'
+    implementation 'com.github.maxbruecken:jaudiotagger-android:995dd88554'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.1-native-mt"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.arthenica:mobile-ffmpeg-full:4.3.1'
+    //implementation(name:'mobile-ffmpeg', ext:'aar')
+    compileOnly(name:'mobile-ffmpeg', ext:'aar')
+}
+
+android.sourceSets {
+    main.java.srcDirs += "src/main/kotlin"
+}

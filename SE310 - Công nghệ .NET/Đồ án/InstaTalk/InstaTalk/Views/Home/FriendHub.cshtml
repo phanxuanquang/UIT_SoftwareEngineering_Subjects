@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@section customHead {
+    <link rel="stylesheet" href="~/css/home_friendhub.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+}
+
+<div class="modal fade" id="ModalJoinRoom" tabindex="-1" aria-labelledby="ModalJoinRoomTitle" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="join-box modal-content">
+            <form id="form_join_room" method="post" autocomplete="off" asp-action="JoinRoom" asp-controller="Home">
+                <div class="user-box">
+                    <input type="text" name="JoinRoom.DisplayName" required autocomplete="off" />
+                    <label>Your display name</label>
+                </div>
+                <div class="user-box">
+                    <input id="input_room_id" type="text" name="JoinRoom.RoomId" required autocomplete="off" value="@ViewBag.RoomId"/>
+                    <label>Room ID or URL</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" name="JoinRoom.SecurityCode" autocomplete="off" />
+                    <label>Password</label>
+                </div>
+                <center>
+                    <button type="button" class="custom-btn" onclick="homeFormSubmit('form_join_room');">Join</button>
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="min-vh-100 d-flex align-items-center justify-content-center flex-column w-100">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center p-4 col-10">
+        <div style="max-width:550px;">
+            <img class="img-fluid" id="homepage_logo" src="~/asset/image/logo.png" alt="logo">
+            <form id="homepage_form" class="w-100" method="post" asp-action="CreateRoom" asp-controller="Home">
+                <div>
+                    <div class="textInputWrapper" style="margin: 1rem 0rem 1rem 0rem;">
+                        <input id="input_display_name" required placeholder="Your display name" type="text" name="CreateRoom.DisplayName" class="textInput" autocomplete="nope">
+                    </div> 
+                    <button id="btn_create_room" type="button" class="custom-btn" style="font-size: 12px; width:12.5rem;" onclick="homeFormSubmit('homepage_form');">
+                        Create a Room
+                    </button>
+                    <button id="btn_join_room" type="button" class="custom-btn" style="font-size: 12px; width:12.5rem;" data-bs-toggle="modal" data-bs-target="#ModalJoinRoom">
+                        Join a Room
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</div>
+@section script {
+    <script src="~/js/home_friendhub.js" asp-append-version="true"></script>
+}
+
+
+

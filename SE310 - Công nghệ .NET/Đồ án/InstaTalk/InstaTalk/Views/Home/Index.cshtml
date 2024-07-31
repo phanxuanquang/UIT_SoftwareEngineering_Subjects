@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+@section customHead {
+    <link rel="stylesheet" href="~/css/home_index.css" asp-append-version="true" />
+}
+
+<div class="entry-box">
+    <h2 class="popup-header">You want to meet?</h2>
+    <div style="padding: 30px; align-content: center">
+        <a class="custom-btn" href="#" onclick="location.href='@Url.Action("FriendHub", "Home")'">
+            FRIENDS
+            <span></span>
+        </a>
+        <a class="custom-btn" href="#" onclick="location.href='@Url.Action("Index", "Stranger")'">
+            STRANGER
+            <span></span>
+        </a>
+    </div>
+</div>
+
+
+@section script {
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#HomeModal').modal('show');
+        });
+    </script>
+}

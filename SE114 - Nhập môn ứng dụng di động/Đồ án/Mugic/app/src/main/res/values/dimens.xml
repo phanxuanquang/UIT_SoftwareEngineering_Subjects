@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="album_art">55dp</dimen>
+    <dimen name="album_art_large">100dp</dimen>
+    <dimen name="album_art_mega">250dp</dimen>
+
+    <dimen name="album_art_spacing">2dp</dimen>
+    <dimen name="album_art_circle_small">42dp</dimen>
+
+    <dimen name="corner_small">4dp</dimen>
+    <dimen name="corner_large">8dp</dimen>
+    <dimen name="corner_extra_large">10dp</dimen>
+
+    <dimen name="bottom_controls_height">65dp</dimen>
+    <dimen name="fab_margin_bottom">55dp</dimen>
+</resources>

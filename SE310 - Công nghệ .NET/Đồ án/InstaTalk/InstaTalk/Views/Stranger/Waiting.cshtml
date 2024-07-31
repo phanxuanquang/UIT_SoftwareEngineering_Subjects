@@ -1,0 +1,64 @@
+﻿@model RoomInfo
+@{
+    ViewData["Title"] = "Stranger";
+}
+
+@section customHead {
+    <link rel="stylesheet" href="~/css/stranger_waiting.css" asp-append-version="true" />
+
+}
+
+<div class="min-vh-100 d-flex align-items-center justify-content-center w-100">
+    <div class="d-flex flex-column justify-content-center align-items-center text-center p-4 col-10">
+        <div role="img" class="wheel-and-hamster" style="margin:2rem 2rem 2rem 2rem">
+            <div class="wheel"></div>
+            <div class="hamster">
+                <div class="hamster__body">
+                    <div class="hamster__head">
+                        <div class="hamster__ear"></div>
+                        <div class="hamster__eye"></div>
+                        <div class="hamster__nose"></div>
+                    </div>
+                    <div class="hamster__limb hamster__limb--fr"></div>
+                    <div class="hamster__limb hamster__limb--fl"></div>
+                    <div class="hamster__limb hamster__limb--br"></div>
+                    <div class="hamster__limb hamster__limb--bl"></div>
+                    <div class="hamster__tail"></div>
+                </div>
+            </div>
+            <div class="spoke"></div>
+        </div>
+        <div style="letter-spacing: 0.25rem; text-transform: uppercase; color: #999999; font-size: 24px;">
+            <div><span id="stranger_display_name">Quang</span> <br/>is coming to you. Let's wait...</div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <script>
+        var ObjClient = {};
+        ObjClient.Room = @Html.Raw(Json.Serialize(Model.Room));
+        ObjClient.User = @Html.Raw(Json.Serialize(Model.User));
+        ObjClient.HostHub = @Html.Raw(Json.Serialize(ViewBag.API));
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const spanElement = document.getElementById("stranger_display_name");
+            const humanNames = [
+                'Olivia', 'Otto', 'Aiden', 'Marcel', 'Ida', 'Sakura', 'Zoe', 'Sophia', 'Charlotte', 'Mila', 'Oliver', 'Mason', 'Noah', 'Ken', 'Eri', 'Yu', 'Lena', 'Lucia', 'Elena', 'Samuel', 'Eleanor', 'Leo', 'Ella', 'Aarav', 'Akira', 'Alice', 'Theo', 'Giovanni', 'Rin', 'Harper', 'Isabella', 'Mei', 'Isla', 'Min', 'Ava', 'Riko', 'Luis', 'Tao', 'Yoshiko', 'Amelia', 'Evelyn', 'Lucas', 'Mai', 'Hua', 'Li', 'Emma', 'Isabel', 'Yuki', 'Liam', 'Emil', 'Daniel', 'Nora', 'Clara', 'Ryota', 'Owen', 'Aria', 'Jin', 'Mia', 'Jackson', 'Sofia', 'David', 'Grace', 'Kai', 'Hiro', 'Lars', 'Sora', 'Benjamin', 'Elias', 'Ran', 'Max', 'Avery', 'Emily', 'Eva', 'Anton', 'William', 'Scarlett', 'Ethan', 'Gustav', 'Victoria', 'Nina', 'Sophie', 'Eli', 'Rafael', 'Jack', 'Oscar', 'Alina', 'Soo', 'Felix', 'Hana', 'Amelie', 'Henry', 'Hiroshi', 'Jonas', 'Matteo', 'Lin', 'Alexander', 'Ruby', 'Luca', 'Mateo'];
+            let currentIndex = 0;
+
+            const interval = setInterval(() => {
+                if (currentIndex >= humanNames.length) {
+                    clearInterval(interval);
+                    return;
+                }
+                spanElement.textContent = humanNames[currentIndex];
+                currentIndex++;
+            }, 100);
+        }, false);
+    </script>
+    <script type="text/javascript" src="~/lib/microsoft-signalr/signalr.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/services/stranger_hub.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="~/js/waiting.js" asp-append-version="true"></script>
+}

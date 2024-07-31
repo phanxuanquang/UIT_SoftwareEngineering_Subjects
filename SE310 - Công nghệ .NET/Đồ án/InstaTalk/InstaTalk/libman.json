@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "microsoft-signalr@7.0.12",
+      "destination": "wwwroot/lib/microsoft-signalr/"
+    },
+    {
+      "library": "peerjs@1.5.1",
+      "destination": "wwwroot/lib/peerjs/"
+    },
+    {
+      "library": "rxjs@7.8.1",
+      "destination": "wwwroot/lib/rxjs/"
+    },
+    {
+      "library": "multi-select@0.9.12",
+      "destination": "wwwroot/lib/multi-select/"
+    },
+    {
+      "library": "bootstrap-tagsinput@0.8.0",
+      "destination": "wwwroot/lib/bootstrap-tagsinput/"
+    }
+  ]
+}

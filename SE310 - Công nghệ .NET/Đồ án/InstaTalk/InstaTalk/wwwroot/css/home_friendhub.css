@@ -1,0 +1,137 @@
+﻿
+
+@media (max-width: 720px) {
+    .custom-btn {
+        width: 70% !important;
+    }
+}
+
+@media (max-width: 450px) {
+    .custom-btn {
+        margin-bottom: 2rem;
+        width: 100% !important;
+        letter-spacing: 2px !important;
+    }
+}
+
+#input_display_name {
+    display: initial !important;
+}
+
+.input-custom:focus {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.btn-custom:focus {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.btn-close:focus ,.form-control:focus {
+    border-color: var(--primary-color-dark) !important;
+    box-shadow: 0 0 0 0.25rem rgba(52, 168, 83, 0.25);
+}
+
+
+.div-friendhub-custom:focus-within, .btn:focus {
+    border-color: var(--primary-color-dark) !important;
+    box-shadow: 0 0 0 0.25rem rgba(52, 168, 83, 0.25) !important;
+}
+
+.join-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 2.5rem 3rem 1rem 3rem;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0, 0.9);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+    .join-box .user-box {
+        position: relative;
+    }
+
+        .join-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        .join-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .join-box .user-box input:focus ~ label,
+        .join-box .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #bdb8b8;
+            font-size: 12px;
+        }
+
+    .join-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: #ffffff;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin: 0.5rem 1rem 0.5rem 1rem;
+        letter-spacing: 0.25rem;
+        border-radius: 5px 5px 5px 5px;
+        width: 12rem;
+        background: linear-gradient(to bottom, rgba(5, 5, 6, .5), rgba(13, 13, 14, 0.2));
+        text-align: center;
+    }
+
+    .join-box a:hover {
+        background: #03f40f;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #03f40f, 0 0 25px #03f40f, 0 0 50px #03f40f, 0 0 100px #03f40f;
+    }
+
+    .join-box a span {
+        position: absolute;
+        display: block;
+    }
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.join-box a span:nth-child(1) {
+    bottom: 2px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03f40f);
+    animation: btn-anim1 2s linear infinite;
+}

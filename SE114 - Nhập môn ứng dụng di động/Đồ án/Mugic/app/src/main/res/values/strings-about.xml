@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="about_dialog_title" translatable="false">@string/app_name</string>
+  <string name="about_dialog_body">This is an music player that support offline and online listening. You can download any song and listen all the time, or search for huge number of Youtube songs.</string>
+  <string name="about_dialog_dismiss">Dismiss</string>
+
+</resources>
