@@ -22,18 +22,3 @@
 [submodule "IT008 - Lập trình trực quan/Thực hành/Visual-Programming-UIT"]
 	path = IT008 - Lập trình trực quan/Thực hành/Visual-Programming-UIT
 	url = https://github.com/phanxuanquang/Visual-Programming-UIT
-[submodule "IT008 - Lập trình trực quan/Đồ án/autoStudent"]
-	path = IT008 - Lập trình trực quan/Đồ án/autoStudent
-	url = https://github.com/phanxuanquang/autoStudent
-[submodule "SE114 - Nhập môn ứng dụng di động/Đồ án/Mugic"]
-	path = SE114 - Nhập môn ứng dụng di động/Đồ án/Mugic
-	url = https://github.com/MiMi-Yup/Mugic
-[submodule "SE310 - Công nghệ .NET/Đồ án/InstaTalk"]
-	path = SE310 - Công nghệ .NET/Đồ án/InstaTalk
-	url = https://github.com/phanxuanquang/InstaTalk
-[submodule "SE401 - Mẫu thiết kế/Đồ án/Design-Patterns"]
-	path = SE401 - Mẫu thiết kế/Đồ án/Design-Patterns
-	url = https://github.com/phanxuanquang/Design-Patterns
-[submodule "SE400 - Seminar các vấn đề hiện đại của CNPM/Đồ án/EngAce"]
-	path = SE400 - Seminar các vấn đề hiện đại của CNPM/Đồ án/EngAce
-	url = https://github.com/phanxuanquang/EngAce
