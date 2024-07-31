@@ -22,3 +22,12 @@
 [submodule "IT008 - Lập trình trực quan/Thực hành/Visual-Programming-UIT"]
 	path = IT008 - Lập trình trực quan/Thực hành/Visual-Programming-UIT
 	url = https://github.com/phanxuanquang/Visual-Programming-UIT
+[submodule "SE405 - Chuyên đề Mobile and Pervasive Computing/Đồ án/LapTeller-Mobile"]
+	path = SE405 - Chuyên đề Mobile and Pervasive Computing/Đồ án/LapTeller-Mobile
+	url = https://github.com/phanxuanquang/LapTeller-Mobile
+[submodule "SE400 - Seminar các vấn đề hiện đại của CNPM/Đồ án/EngAce"]
+	path = SE400 - Seminar các vấn đề hiện đại của CNPM/Đồ án/EngAce
+	url = https://github.com/phanxuanquang/EngAce
+[submodule "SE401 - Mẫu thiết kế/Đồ án/Design-Patterns"]
+	path = SE401 - Mẫu thiết kế/Đồ án/Design-Patterns
+	url = https://github.com/phanxuanquang/Design-Patterns
