@@ -31,3 +31,6 @@
 [submodule "SE401 - Mẫu thiết kế/Đồ án/Design-Patterns"]
 	path = SE401 - Mẫu thiết kế/Đồ án/Design-Patterns
 	url = https://github.com/phanxuanquang/Design-Patterns
+[submodule "SE104 - Nhập môn Công nghệ phần mềm/Đồ án/studMin"]
+	path = SE104 - Nhập môn Công nghệ phần mềm/Đồ án/studMin
+	url = https://github.com/phanxuanquang/studMin

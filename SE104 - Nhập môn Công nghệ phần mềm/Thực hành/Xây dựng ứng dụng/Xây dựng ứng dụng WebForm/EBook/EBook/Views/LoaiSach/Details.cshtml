@@ -1,0 +1,27 @@
+﻿@model EBook.Models.LoaiSachModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LoaiSachModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenTheLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenTheLoai)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LoaiID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
